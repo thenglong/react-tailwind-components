@@ -8,25 +8,9 @@ export default function TextBox({
   value,
   onChange,
 }) {
-  let styles = '';
-
-  switch (size) {
-    case 'sm':
-      styles += 'h-6';
-      break;
-    case 'md':
-      styles += 'h-8';
-      break;
-    case 'lg':
-      styles += 'h-10';
-      break;
-    default:
-      break;
-  }
-
   return (
     <input
-      className={`${styles} bg-gray-300 px-2 rounded-md placeholder:select-none ${className}`}
+      className={`${size} bg-gray-300 text-gray-800 px-2 py-1 rounded-md placeholder:select-none focus:outline-none focus:ring-2 ${className}`}
       type={type}
       placeholder={placeholder}
       value={value}

@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+  /* size */
+  .sm {
+    @apply text-xs px-3 rounded;
+  }
+
+  .md {
+    @apply text-base px-4 rounded-md;
+  }
+
+  .lg {
+    @apply text-lg px-4 rounded-lg;
+  }
+  
+
+  /* positive, negative, pending */
+  .positive {
+    @apply bg-green-300 text-green-900;
+  }
+
+  .negative {
+    @apply bg-red-300 text-red-900;
+  }
+
+  .pending {
+    @apply bg-yellow-300 text-yellow-900;
+  }
+
+
+  /* primary, secondary, outline */
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* checkbox  */
+  .checkbox-sm {
+    @apply h-4 w-4 rounded-sm;
+  }
+
+  .checkbox-md {
+    @apply h-5 w-5 rounded;
+  }
+
+  .checkbox-lg {
+    @apply h-6 w-6 rounded-md;
+  }
+}

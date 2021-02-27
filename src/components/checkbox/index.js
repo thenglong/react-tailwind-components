@@ -33,11 +33,11 @@ export default function CheckBox({
         <input
           id={name}
           type="checkbox"
-          className={`${checkBoxStyles} checked:bg-blue-900 mr-2`}
+          className={`checkbox-${size} mr-2 checked:bg-primary focus:ring-1 focus:ring-offset-green-200 focus:ring-offset-1`}
           checked={checked}
           onChange={() => onChange(checked => !checked)}
         />
-        <label htmlFor={name} className={`${labelStyles} select-none`}>
+        <label htmlFor={name} className={`${size} px-0 select-none`}>
           {label}
         </label>
       </div>

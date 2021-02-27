@@ -14,12 +14,12 @@ function App() {
 
   return (
     <div className="ml-10">
-      <h1 className="my-2 pl-1 py-1 bg-blue-300">Badge</h1>
+      <h1 className="my-2 pl-1 py-1 bg-primary text-gray-100">Badge</h1>
       <Badge text="hello" variant="positive" size="sm" />
       <Badge text="hello" variant="negative" size="md" />
       <Badge text="hello" variant="pending" size="lg" />
 
-      <h1 className="pl-1 py-1 my-2 mt-8 bg-blue-300">CheckBox</h1>
+      <h1 className="pl-1 py-1 my-2 mt-8 bg-primary text-gray-100">CheckBox</h1>
       <CheckBox
         label="enable"
         name="enabled"
@@ -43,7 +43,7 @@ function App() {
       />
       <pre>value: {checkboxValue.toString()}</pre>
 
-      <h1 className="pl-1 py-1 my-2 mt-8 bg-blue-300">TextBox</h1>
+      <h1 className="pl-1 py-1 my-2 mt-8 bg-primary text-gray-100">TextBox</h1>
       <TextBox
         placeholder="Search"
         value={textBoxValue}
@@ -63,12 +63,15 @@ function App() {
         value={textBoxValue}
         size="lg"
         onChange={setTextBoxValue}
-        bg-blue-300
+        bg-primary
+        text-gray-100
         className="w-56 block my-2"
       />
       <pre>value: {textBoxValue}</pre>
 
-      <h1 className="pl-1 py-1 my-2 mt-8 bg-red-300">Search on Submit</h1>
+      <h1 className="pl-1 py-1 my-2 mt-8 bg-red-600 text-red-900">
+        Search on Submit
+      </h1>
       <SearchOnSubmitField
         placeholder="search anythings"
         size="sm"
@@ -85,10 +88,28 @@ function App() {
         className="my-2 w-56"
       />
 
-      <h1 className="pl-1 py-1 my-2 mt-8 bg-blue-300">Button</h1>
-      <Button label="button" size="sm" variant="primary" className="block my-2" />
-      <Button label="button" size="md" variant="secondary" className="block my-2" />
-      <Button label="button" size="lg" variant="outline" className="block my-2" />
+      <h1 className="pl-1 py-1 my-2 mt-8 bg-primary text-gray-100">Button</h1>
+      <Button
+        label="button"
+        size="sm"
+        variant="primary"
+        className="block my-2"
+        onClick={() => alert('clicked!')}
+      />
+      <Button
+        label="button"
+        size="md"
+        variant="secondary"
+        className="block my-2"
+        onClick={() => alert('clicked!')}
+      />
+      <Button
+        label="button"
+        size="lg"
+        variant="outline"
+        className="block my-2"
+        onClick={() => alert('clicked!')}
+      />
     </div>
   );
 }
