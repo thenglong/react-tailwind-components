@@ -33,6 +33,17 @@
 
 
   /* primary, secondary, outline */
+  .primary {
+    @apply bg-primary text-gray-100 focus:ring-2;
+  }
+
+  .secondary {
+    @apply bg-secondary text-gray-800 focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+  }
+
+  .outline {
+    @apply border-2 border-red-500 text-red-700 focus:ring-2 focus:ring-red-300;
+  }
 
 
 
@@ -59,3 +70,9 @@
     @apply h-6 w-6 rounded-md;
   }
 }
+
+
+
+
+
+

@@ -1,43 +1,40 @@
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 export default function CheckBox({
-  className,
-  label,
-  name,
-  onChange,
-  checked,
   size,
+  label,
+  className,
+  name,
+  id,
+  onChange,
+  value,
 }) {
-  let checkBoxStyles = '';
-  let labelStyles = '';
-  switch (size) {
-    case 'sm':
-      checkBoxStyles += 'h-4 w-4';
-      labelStyles += 'text-sm';
-      break;
-    case 'md':
-      checkBoxStyles += 'h-5 w-5';
-      labelStyles += 'text-base';
-      break;
-    case 'lg':
-      checkBoxStyles += 'h-6 w-6';
-      labelStyles += 'text-lg';
-      break;
-    default:
-      break;
-  }
-
   return (
     <div className={className}>
-      <div className={`inline-flex items-center`}>
+      <div className="inline-flex items-center">
         <input
-          id={name}
+          className={classnames(
+            'mr-2 checked:bg-primary focus:ring-1 focus:ring-offset-green-200 focus:ring-offset-1',
+            {
+              'h-4 w-4 rounded-sm': size === 'sm',
+              'h-5 w-5 rounded': size === 'md',
+              'h-6 w-6 rounded-md': size === 'lg',
+            }
+          )}
+          id={id}
+          name={name}
           type="checkbox"
-          className={`checkbox-${size} mr-2 checked:bg-primary focus:ring-1 focus:ring-offset-green-200 focus:ring-offset-1`}
-          checked={checked}
+          checked={value}
           onChange={() => onChange(checked => !checked)}
         />
-        <label htmlFor={name} className={`${size} px-0 select-none`}>
+        <label
+          className={classnames('px-0 select-none', {
+            'text-xs': size === 'sm',
+            'text-base': size === 'md',
+            'text-lg': size === 'lg',
+          })}
+          htmlFor={id}>
           {label}
         </label>
       </div>
@@ -50,10 +47,11 @@ CheckBox.defaultProps = {
 };
 
 CheckBox.propTypes = {
-  checked: PropTypes.bool.isRequired,
+  value: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  id: PropTypes.string,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   className: PropTypes.string,
 };
